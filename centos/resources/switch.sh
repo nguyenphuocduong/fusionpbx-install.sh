@@ -15,7 +15,7 @@ if [ .$switch_source = .true ]; then
 	fi
 
 	#copy the switch conf files to /etc/freeswitch
-	switch/conf-copy.sh
+	#switch/conf-copy.sh
 
 	#set the file permissions
 	switch/source-permissions.sh
@@ -41,7 +41,7 @@ if [ .$switch_package = .true ]; then
 	fi
 
 	#copy the switch conf files to /etc/freeswitch
-	switch/conf-copy.sh
+	#switch/conf-copy.sh
 
 	#set the file permissions
 	switch/package-permissions.sh
