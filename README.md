@@ -81,6 +81,11 @@ reboot
 
 Cho phép kết nối socket từ bên ngoài
 ```sh
+https://domain/app/settings/setting_edit.php
+Event Socket IP Address	 : 0.0.0.0
+```
+
+```sh
 firewall-cmd --permanent --zone=public --add-port=8021/tcp
 firewall-cmd --permanent --zone=public --add-port=8021/udp
 ```
