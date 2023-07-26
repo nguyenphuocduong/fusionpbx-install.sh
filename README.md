@@ -47,6 +47,16 @@ timedatectl set-timezone Asia/Ho_Chi_Minh
 
 reboot
 ```
+
+Cài đặt freeswich
+```sh
+echo "signalwire" > /etc/yum/vars/signalwireusername
+echo "pat_GaFWZjiZKEA3J6SunWVvqV5g" > /etc/yum/vars/signalwiretoken
+yum install -y https://$(< /etc/yum/vars/signalwireusername):$(< /etc/yum/vars/signalwiretoken)@freeswitch.signalwire.com/repo/yum/centos-release/freeswitch-release-repo-0-1.noarch.rpm epel-release
+yum install -y freeswitch-config-vanilla freeswitch-lang-* freeswitch-sounds-*
+systemctl enable freeswitch
+```
+
 ```sh
 sudo useradd freeswitch
 sudo usermod -a -G daemon freeswitch
