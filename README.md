@@ -58,10 +58,11 @@ mkdir -p /etc/freeswitch
 
 
 ```
-yum install wget nano -y
 CentOS operating system is a requirement for some companies. Don't expect video mixing to work. It will likely be a year or more for video mixing dependencies to be updated enough to work in CentOS.
 
 ```sh
+yum install wget nano -y
+
 wget -O - https://raw.githubusercontent.com/nguyenphuocduong/fusionpbx-install.sh/master/centos/pre-install.sh | sh
 cd /usr/src/fusionpbx-install.sh/centos && ./install.sh
 ```
