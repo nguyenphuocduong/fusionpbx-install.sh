@@ -47,7 +47,6 @@ timedatectl set-timezone Asia/Ho_Chi_Minh
 
 reboot
 ```
-
 ```sh
 sudo useradd freeswitch
 sudo usermod -a -G daemon freeswitch
@@ -65,6 +64,24 @@ CentOS operating system is a requirement for some companies. Don't expect video 
 wget -O - https://raw.githubusercontent.com/nguyenphuocduong/fusionpbx-install.sh/master/centos/pre-install.sh | sh
 cd /usr/src/fusionpbx-install.sh/centos && ./install.sh
 ```
+
+Cho phép kết nối socket từ bên ngoài
+```sh
+firewall-cmd --permanent --zone=public --add-port=8021/tcp
+firewall-cmd --permanent --zone=public --add-port=8021/udp
+```
+mở acl --> add new --> name : loopback.auto --> allow 0.0.0.0/32
+https://192.168.20.35/app/access_controls/access_controls.php
+
+Nếu lỗi về postgresql
+```sh
+nano +82 /var/lib/pgsql/data/pg_hba.conf
+host  all all 127.0.0.1/32 trust
+host  all all ::1/128      trust
+
+sudo systemctl restart postgresql
+```
+
 
 ### Windows
 *  This powershell install for windows is currently in a "beta stage".
