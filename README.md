@@ -40,13 +40,15 @@ cd /usr/src/fusionpbx-install.sh/freebsd/
 ```
 
 ### CentOS
-
+```sh
 sed -i 's/\(^SELINUX=\).*/\SELINUX=disabled/' /etc/selinux/config
 
 timedatectl set-timezone Asia/Ho_Chi_Minh
 
 reboot
+```
 
+```sh
 sudo useradd freeswitch
 sudo usermod -a -G daemon freeswitch
 sudo mkdir -p /var/lib/freeswitch
@@ -56,7 +58,7 @@ mkdir -p /etc/fusionpbx
 mkdir -p /etc/freeswitch
 
 yum install wget -y
-
+```
 CentOS operating system is a requirement for some companies. Don't expect video mixing to work. It will likely be a year or more for video mixing dependencies to be updated enough to work in CentOS.
 
 ```sh
