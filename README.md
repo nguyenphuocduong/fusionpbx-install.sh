@@ -71,7 +71,9 @@ firewall-cmd --permanent --zone=public --add-port=8021/tcp
 firewall-cmd --permanent --zone=public --add-port=8021/udp
 ```
 mở acl --> add new --> name : loopback.auto --> allow 0.0.0.0/32
-https://192.168.20.35/app/access_controls/access_controls.php
+```sh
+https://domain/app/access_controls/access_controls.php
+```
 
 Nếu lỗi về postgresql
 ```sh
