@@ -75,6 +75,8 @@ yum install wget nano -y
 
 wget -O - https://raw.githubusercontent.com/nguyenphuocduong/fusionpbx-install.sh/master/centos/pre-install.sh | sh
 cd /usr/src/fusionpbx-install.sh/centos && ./install.sh
+
+reboot
 ```
 
 Cho phép kết nối socket từ bên ngoài
@@ -89,11 +91,13 @@ https://domain/app/access_controls/access_controls.php
 
 Nếu lỗi về postgresql
 ```sh
-nano +82 /var/lib/pgsql/data/pg_hba.conf
+nano +82 /var/lib/pgsql/data/[14]/pg_hba.conf
 host  all all 127.0.0.1/32 trust
 host  all all ::1/128      trust
 
 sudo systemctl restart postgresql
+
+sudo systemctl restart freeswitch
 ```
 
 
